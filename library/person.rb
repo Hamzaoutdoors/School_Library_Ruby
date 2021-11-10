@@ -32,5 +32,3 @@ class Person
     @age >= 18
   end
 end
-
-per = Person.new(27, 'hamzaellaouzi')
