@@ -27,7 +27,6 @@ class Person
   end
 end
 
-
 per = Person.new(27, 'hamzaellaouzi')
 
 p per.validate_name
