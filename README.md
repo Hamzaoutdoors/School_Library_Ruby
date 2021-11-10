@@ -9,6 +9,11 @@
 # School_Library_Ruby
 This repository aims to practice Object Oriented Programming for best practice. To build the app for school library using Ruby record what books are in the library and who borrows them.
 
+ </br>
+ <div align="center">
+  <em align="center" style>" Everyday life is like programming, I guess. If you love something you can put beauty into it."</em><strong> - Sabrina Bryan</strong>
+  </div>
+
 ## Author
 
 👤 **Ellaouzi Hamza**
