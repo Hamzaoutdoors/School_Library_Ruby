@@ -1,0 +1,15 @@
+require './library/book'
+require './library/person'
+require './library/teacher'
+require './library/student'
+require './library/rental'
+
+puts "Welcome to Our School Library App\n "
+puts 'PLease choose an option by enterin a number'
+puts '1 - List all books'
+puts '2 - List all books'
+puts '3 - List all books'
+puts '4 - List all books'
+puts '5 - List all books'
+puts '6 - List all books'
+puts '7 - List all books'
