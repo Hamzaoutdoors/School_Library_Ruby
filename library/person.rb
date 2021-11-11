@@ -1,8 +1,9 @@
 require './library/corrector'
+require './library/rental'
 
 class Person
+  attr_accessor :name, :age, :rentals
   attr_reader :id
-  attr_accessor :name, :age
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @id = Random.rand(1..10_000)
@@ -10,6 +11,11 @@ class Person
     @age = age
     @parent_permission = parent_permission
     @corrector = Corrector.new
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, self, book)
   end
 
   def can_use_services?
@@ -26,8 +32,3 @@ class Person
     @age >= 18
   end
 end
-
-per = Person.new(27, 'hamzaellaouzi')
-
-p per.validate_name
-# Hamzaellao
