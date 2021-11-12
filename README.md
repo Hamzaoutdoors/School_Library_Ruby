@@ -14,6 +14,15 @@ This repository aims to practice Object Oriented Programming for best practice. 
   <em align="center" style>" Everyday life is like programming, I guess. If you love something you can put beauty into it."</em><strong> - Sabrina Bryan</strong>
   </div>
 
+</br>
+ <div align="center">
+   <kbd>
+    <img alt="gif" src="https://user-images.githubusercontent.com/80895497/141533111-bf5d9d64-6b8f-43a4-b180-be6fba925ea2.gif" width=100% />
+    <p>Object-oriented programming library UI from the terminal</p>
+   </kbd>
+</div>
+
+
 ## Author
 
 👤 **Ellaouzi Hamza**
