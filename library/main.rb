@@ -118,7 +118,7 @@ class Library
     print 'ID of person: '
     id = gets.chomp.to_i
 
-       puts 'Rentals: '
+    puts 'Rentals: '
 
     rentals = @rentals.select { |rental| rental.person.id == id }
 
