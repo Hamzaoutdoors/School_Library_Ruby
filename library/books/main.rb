@@ -31,3 +31,5 @@ end
 book = BookInitializer.new()
 book.create_book
 book.list_all_books
+
+
