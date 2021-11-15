@@ -1,16 +1,14 @@
 # rubocop:disable Metrics\CyclomaticComplexity, Metrics/MethodLength
 
-require './library/book'
-require './library/person'
-require './library/teacher'
-require './library/student'
-require './library/rental'
+require '../library/books/main'
+require '../library/people/main'
+require '../library/rentals/main'
 
 class Library
-  def initialize
-    @people = []
-    @rentals = []
-  end
+  # def initialize
+  #   @people = []
+  #   @rentals = []
+  # end
 
   #    def list_all_books
   #     if @books.empty?
@@ -22,53 +20,53 @@ class Library
   #     end
   #   end
 
-  def list_all_people
-    if @people.empty?
-      puts 'Your Library is empty, please add more people by clicking on 3'
-      return
-    end
-    @people.each do |person|
-      print "[#{person.class.name}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
-    end
-  end
+  # def list_all_people
+  #   if @people.empty?
+  #     puts 'Your Library is empty, please add more people by clicking on 3'
+  #     return
+  #   end
+  #   @people.each do |person|
+  #     print "[#{person.class.name}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
+  #   end
+  # end
 
-  def create_person
-    print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
-
-    option = gets.chomp
-
-    case option
-    when '1'
-      print 'Age: '
-      age = gets.chomp
-      print 'Name: '
-      name = gets.chomp
-      print 'Has parent permission? [Y/N]: '
-      permission_resp = gets.chomp
-      parent_permission = permission_resp.downcase == 'y'
-
-      student = Student.new(age, name, parent_permission)
-      @people.push(student)
-
-      puts "Person created successfuly\n"
-    when '2'
-      print 'Age: '
-      age = gets.chomp
-      print 'Name: '
-      name = gets.chomp
-      print 'Specialization: '
-      specialization = gets.chomp
-
-      teacher = Teacher.new(age, name, specialization)
-      @people.push(teacher)
-
-      puts "Person created successfuly\n"
-
-    else
-      puts 'Please choose number 1 or 2'
-      nil
-    end
-  end
+  # def create_person
+  #   print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
+  #
+  #   option = gets.chomp
+  #
+  #   case option
+  #   when '1'
+  #     print 'Age: '
+  #     age = gets.chomp
+  #     print 'Name: '
+  #     name = gets.chomp
+  #     print 'Has parent permission? [Y/N]: '
+  #     permission_resp = gets.chomp
+  #     parent_permission = permission_resp.downcase == 'y'
+  #
+  #     student = Student.new(age, name, parent_permission)
+  #     @people.push(student)
+  #
+  #     puts "Person created successfuly\n"
+  #   when '2'
+  #     print 'Age: '
+  #     age = gets.chomp
+  #     print 'Name: '
+  #     name = gets.chomp
+  #     print 'Specialization: '
+  #     specialization = gets.chomp
+  #
+  #     teacher = Teacher.new(age, name, specialization)
+  #     @people.push(teacher)
+  #
+  #     puts "Person created successfuly\n"
+  #
+  #   else
+  #     puts 'Please choose number 1 or 2'
+  #     nil
+  #   end
+  # end
 
   #   def create_book
   #     print 'Title: '
@@ -82,55 +80,55 @@ class Library
   #     puts "Book created successfully\n"
   #   end
 
-  def create_rental
-    if @people.empty? && @books.empty?
-      puts 'Your Library is empty add books and people'
-      return
-    end
-    puts 'Select a book from the following list by number'
-    @books.each_with_index do |book, i|
-      print "#{i}) Title: #{book.title}, Author: #{book.author}\n"
-    end
-
-    book_index = gets.chomp.to_i
-    book = @books[book_index]
-
-    puts 'Select a person from the following list by number (not ID)'
-    @people.each_with_index do |person, i|
-      print "#{i}) [#{person.class}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
-    end
-
-    person_index = gets.chomp.to_i
-    person = @people[person_index]
-
-    print "\nDate: "
-
-    date = gets.chomp
-
-    rental = Rental.new(date, person, book)
-    @rentals << rental
-
-    puts "Rental created successfully\n"
-  end
-
-  def list_all_rental
-    print 'ID of person: '
-    id = gets.chomp.to_i
-
-    puts 'Rentals: '
-
-    rentals = @rentals.select { |rental| rental.person.id == id }
-
-    if rentals.empty?
-      puts 'No rentals found'
-      return
-    end
-
-    rentals.each do |rental|
-      print "Date: #{rental.date}, Book \'#{rental.book.title}\' by #{rental.book.author}\n"
-    end
-  end
-end
+#   def create_rental
+#     if @people.empty? && @books.empty?
+#       puts 'Your Library is empty add books and people'
+#       return
+#     end
+#     puts 'Select a book from the following list by number'
+#     @books.each_with_index do |book, i|
+#       print "#{i}) Title: #{book.title}, Author: #{book.author}\n"
+#     end
+#
+#     book_index = gets.chomp.to_i
+#     book = @books[book_index]
+#
+#     puts 'Select a person from the following list by number (not ID)'
+#     @people.each_with_index do |person, i|
+#       print "#{i}) [#{person.class}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
+#     end
+#
+#     person_index = gets.chomp.to_i
+#     person = @people[person_index]
+#
+#     print "\nDate: "
+#
+#     date = gets.chomp
+#
+#     rental = Rental.new(date, person, book)
+#     @rentals << rental
+#
+#     puts "Rental created successfully\n"
+#   end
+#
+#   def list_all_rental
+#     print 'ID of person: '
+#     id = gets.chomp.to_i
+#
+#     puts 'Rentals: '
+#
+#     rentals = @rentals.select { |rental| rental.person.id == id }
+#
+#     if rentals.empty?
+#       puts 'No rentals found'
+#       return
+#     end
+#
+#     rentals.each do |rental|
+#       print "Date: #{rental.date}, Book \'#{rental.book.title}\' by #{rental.book.author}\n"
+#     end
+#   end
+# end
 
 def main
   response = nil
