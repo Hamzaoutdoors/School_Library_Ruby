@@ -1,3 +1,5 @@
+# rubocop:disable Metrics\CyclomaticComplexity, Metrics/MethodLength
+
 require '../books/book'
 require '../people/main'
 
@@ -54,7 +56,4 @@ class RentalIntializer
     puts "Rental created successfully\n"
   end
 end
-
-rental = RentalIntializer.new()
-rental.create_rental
-rental.list_all_rental
+# rubocop:enable Metrics\CyclomaticComplexity, Metrics/MethodLength
