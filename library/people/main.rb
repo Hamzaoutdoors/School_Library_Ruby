@@ -1,5 +1,10 @@
 # rubocop:disable Metrics\CyclomaticComplexity, Metrics/MethodLength
+require './library/people/student'
+require './library/people/teacher'
+
 class PeopleIntializer
+  attr_reader :people
+
   def initialize
     @people = []
   end
@@ -30,7 +35,7 @@ class PeopleIntializer
       parent_permission = permission_resp.downcase == 'y'
 
       student = Student.new(age, name, parent_permission)
-      @people.push(student)
+      @people << student
 
       puts "Person created successfully\n"
     when '2'
@@ -42,7 +47,7 @@ class PeopleIntializer
       specialization = gets.chomp
 
       teacher = Teacher.new(age, name, specialization)
-      @people.push(teacher)
+      @people << teacher
 
       puts "Person created successfully\n"
 

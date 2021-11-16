@@ -1,18 +1,10 @@
 require_relative 'book'
 
 class BookInitializer
+  attr_reader :books
+
   def initialize
     @books = []
-  end
-
-  def list_all_books
-    if @books.empty?
-      puts 'Books list is empty, click on number 4 to create a book'
-      return
-    end
-    @books.each do |book|
-      print "Title: #{book.title.capitalize}, Author: #{book.author.capitalize}\n"
-    end
   end
 
   def create_book
@@ -26,10 +18,14 @@ class BookInitializer
 
     puts "Book created successfully\n"
   end
+
+  def list_all_books
+    if @books.empty?
+      puts 'Books list is empty, click on number 4 to create a book'
+      return
+    end
+    @books.each do |book|
+      print "Title: #{book.title.capitalize}, Author: #{book.author.capitalize}\n"
+    end
+  end
 end
-
-book = BookInitializer.new()
-book.create_book
-book.list_all_books
-
-
