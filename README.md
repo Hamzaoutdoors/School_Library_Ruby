@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>  <img src="https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white"/> </div>
 
 # School_Library_Ruby
-This repository aims to practice Object Oriented Programming for best practice. To build the app for school library using Ruby record what books are in the library and who borrows them.
+This repository aims to practice Object Oriented Programming for best practice (Design pattern, SOLID principals and UI). To build the app for school library using Ruby record what books are in the library and who borrows them.
 
  </br>
  <div align="center">
